@@ -13,8 +13,7 @@ const Hamburger = styled.button`
     width:30px;
     border:0;
     border-top:4px ${props=>props.theme.darkBlue} solid;
-    position:relative;
-    transition:transform 0.5s linear;  
+    position:relative; 
     ::before,::after{
         content:'';
         position: absolute;
@@ -26,15 +25,7 @@ const Hamburger = styled.button`
     }
     ::after
     {
-        transform:translateY(16px);
-        transition:transform 0.5s linear;  
-    }
-    :focus{
-        border:0;
-        transform:rotate(45deg) translate(-12%,25%);
-        ::after{
-            transform:rotate(-90deg) translate(-6px);
-        }
+        transform:translateY(16px); 
     }
 `
 const SignUp = styled(Button)`
@@ -47,8 +38,10 @@ const MobileNav = styled.div`
     background-color:${props=>props.theme.darkViolet};
     position:absolute;
     top:80px;
+    left:5%;
     width:90%;
     text-align:center;
+    border-radius:10px;
 `
 const Link = styled.p`
     color:white;

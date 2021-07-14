@@ -43,7 +43,7 @@ const WhiteText = styled(Header)`
 `
 const AdvancedStatistics = styled.div`
     background-color:#f0f1f6;
-    padding-top:calc(5.5rem + 20px);
+    padding:calc(5.5rem + 20px) 0;
 `
 const Statistic = styled.div`
     background-color:white;

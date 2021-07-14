@@ -24,6 +24,7 @@ const Submit = styled.input.attrs({type:"submit", value:"Shorten It!"})`
     margin-top:1rem;
     background-color:${props=>props.theme.cyan};
     border:0;
+    font-size:20px;
     color:white;
     border-radius:5px;
     font-weight:bold;
