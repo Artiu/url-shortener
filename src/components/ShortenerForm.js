@@ -9,6 +9,8 @@ const Form = styled.form`
     background-position:top right;
     background-color:${props=>props.theme.darkViolet};
     border-radius:10px;
+    position:relative;
+    top:calc(2.5rem + 20px);
 `
 const Input = styled.input.attrs({type:"text", placeholder:"Shorten a link here..."})`
     width:100%;
@@ -31,8 +33,8 @@ export default function ShortenerForm()
 {
     return(
         <Form>
-            <Input></Input>
-            <Submit></Submit>
+            <Input/>
+            <Submit/>
         </Form>
     )
 }
