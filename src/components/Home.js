@@ -6,12 +6,20 @@ import bgBoost from '../images/bg-boost-mobile.svg';
 import iconBrand from '../images/icon-brand-recognition.svg';
 import iconDetailed from '../images/icon-detailed-records.svg';
 import iconFully from '../images/icon-fully-customizable.svg';
+import bgBoostDesktop from '../images/bg-boost-desktop.svg';
 
 const Main = styled.main`
     text-align:center;
+    overflow-x:hidden;
 `
 const InWorkPicture = styled.img`
     max-width:100%;
+    position: relative;
+    left:5%;
+    @media (min-width:1450px)
+    {
+        float:right;
+    }
 `
 const Header = styled.p`
     font-size:2rem;
@@ -51,12 +59,26 @@ const Statistic = styled.div`
     margin: 0 auto;
     margin-top:100px;
     border-radius:10px;
-    z-index:2;
+    @media(min-width:1450px)
+    {
+        width:25%;
+        height:300px;
+        margin:0 20px;
+    }
 `
 const BottomContainer = styled.div`
-    background:url(${bgBoost}) repeat-y;
+    background:url(${bgBoost}) no-repeat;
     background-color:${props=>props.theme.darkViolet};
+    background-size:cover;
+    background-position:left center;
     padding: 3rem 0;
+    @media(min-width:1450px)
+    {
+        background:url(${bgBoostDesktop}) no-repeat;
+        background-color:${props=>props.theme.darkViolet};
+        background-size:cover;
+        background-position:left center;
+    }
 `
 const SmallImage = styled.img`
     position:absolute;
@@ -82,41 +104,69 @@ const SmallImageContainer = styled.div`
         background-color:${props=>props.theme.cyan};
     }
 `
+const HeaderContainer = styled.div`
+    @media (min-width:1450px)
+    {
+        float:left;
+        text-align:left;
+    }
+`
+const StatisticHeader = styled.div`
+    @media (min-width:1450px)
+    {
+        width:100%;
+        padding:0
+    }
+`
+const Statistics = styled.div`
+    margin:auto;
+    @media(min-width:1450px)
+    {
+        display:flex;
+        flex-wrap:wrap;
+    }
+`
 export default function Home()
 {
     return(
         <Main>
             <InWorkPicture src={working} alt="employee at work"/>
-            <BigHeader>More than just shorter links</BigHeader>
-            <Text>Build your brand’s recognition and get detailed insights 
-            on how your links are performing.</Text>
-            <Button>Get Started</Button>
+            <HeaderContainer>
+                <BigHeader>More than just shorter links</BigHeader>
+                <Text>Build your brand’s recognition and get detailed insights 
+                on how your links are performing.</Text>
+                <Button>Get Started</Button>
+            </HeaderContainer>
             <ShortenerForm/>
             <LinksList/>
             <AdvancedStatistics>
-                <Header>Advanced Statistics</Header>
-                <Text>Track how your links are performing across the web with our advanced statistics dashboard.</Text>
-                <Statistic>
-                    <SmallImageContainer>
-                        <SmallImage src={iconBrand}/>
-                    </SmallImageContainer>
-                    <Header>Brand Recognition</Header>
-                    <Text>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</Text>
-                </Statistic>
-                <Statistic>
-                    <SmallImageContainer className="line">
-                        <SmallImage src={iconDetailed}/>
-                    </SmallImageContainer>
-                    <Header>Detailed Records</Header>
-                    <Text>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</Text>
-                </Statistic>
-                <Statistic>
-                    <SmallImageContainer className="line">
-                        <SmallImage src={iconFully}/>
-                    </SmallImageContainer>
-                    <Header>Fully Customizable</Header>
-                    <Text>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</Text>
-                </Statistic>
+                <StatisticHeader>
+                    <Header>Advanced Statistics</Header>
+                    <Text>Track how your links are performing across the web with our advanced statistics dashboard.</Text>
+                </StatisticHeader>
+                <Statistics>
+                    <Statistic>
+                        <SmallImageContainer>
+                            <SmallImage src={iconBrand}/>
+                        </SmallImageContainer>
+                        <Header>Brand Recognition</Header>
+                        <Text>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</Text>
+                    </Statistic>
+                    <Statistic>
+                        <SmallImageContainer className="line">
+                            <SmallImage src={iconDetailed}/>
+                        </SmallImageContainer>
+                        <Header>Detailed Records</Header>
+                        <Text>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</Text>
+                    </Statistic>
+                    <Statistic>
+                        <SmallImageContainer className="line">
+                            <SmallImage src={iconFully}/>
+                        </SmallImageContainer>
+                        <Header>Fully Customizable</Header>
+                        <Text>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</Text>
+                    </Statistic>
+                </Statistics>
             </AdvancedStatistics>
             <BottomContainer>
                 <WhiteText>Boost your links today</WhiteText>
