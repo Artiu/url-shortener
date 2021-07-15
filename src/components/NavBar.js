@@ -7,11 +7,11 @@ const Nav = styled.nav`
     display:flex;
     justify-content: space-between;
     padding:1rem;
-    @media(min-width:1450px)
+    @media(min-width:1000px)
     {
         display:grid;
         grid-template-columns:auto 1fr;
-        padding:1rem 3rem;
+        padding:2rem 10%;
     }
 `
 const Hamburger = styled.button`
@@ -33,7 +33,7 @@ const Hamburger = styled.button`
     {
         transform:translateY(16px); 
     }
-    @media(min-width:1450px)
+    @media(min-width:1000px)
     {
         display:none;
     }
@@ -43,7 +43,7 @@ const SignUp = styled(Button)`
     padding:20px 0;
     margin:0;
     margin-bottom:40px;
-    @media(min-width:1450px)
+    @media(min-width:1000px)
     {
         font-size:16px;
         width:auto;
@@ -64,7 +64,7 @@ const Link = styled.p`
     color:white;
     font-size:20px;
     margin:20px 0;
-    @media(min-width:1450px)
+    @media(min-width:1000px)
     {
         display:inline-block;
         font-size:16px;
@@ -79,7 +79,7 @@ const StyledHr = styled.hr`
 `
 const Links = styled.div`
     display:none;
-    @media(min-width:1450px)
+    @media(min-width:1000px)
     {
         display:flex;
         justify-content:space-between;

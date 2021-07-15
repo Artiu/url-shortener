@@ -16,8 +16,9 @@ const InWorkPicture = styled.img`
     max-width:100%;
     position: relative;
     left:5%;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
+        max-width:35%;
         float:right;
     }
 `
@@ -31,6 +32,11 @@ const BigHeader = styled(Header)`
     padding:0 5%;
     line-height:1.2;
     margin-top:5%;
+    @media (min-width:1000px)
+    {
+        padding-left:0;
+        padding-right:10%;
+    }
 `
 const Text = styled.p`
     color:${props=>props.theme.grayishViolet};
@@ -45,6 +51,11 @@ export const Button = styled.button`
     color:white;
     font-weight:bold;
     margin-top:10px;
+    @media (min-width:1000px)
+    {
+        padding:10px 30px;
+        font-size:16px;
+    }
 `
 const WhiteText = styled(Header)`
     color:white;
@@ -59,11 +70,54 @@ const Statistic = styled.div`
     margin: 0 auto;
     margin-top:100px;
     border-radius:10px;
-    @media(min-width:1450px)
+    position:relative;
+    &.line::before{
+        content:'';
+        position:absolute;
+        top:-100px;
+        transform:translateX(-50%);
+        width:10px;
+        height:100px;
+        background-color:${props=>props.theme.cyan};
+    }
+    @media(min-width:1000px)
+    {
+        display:inline-block;
+        width:31%;
+        height:300px;
+        margin:0 10px;
+        &.line::before{
+            left:-20px;
+            transform:translateY(-50%);
+            width:20px;
+            height:10px;
+        }
+        &:nth-child(2)
+        {
+            top:40px;
+            ::before
+            {
+                top:calc(50% - 40px);
+            }
+        }
+        &:nth-child(3)
+        {
+            top:80px;
+            ::before
+            {
+                top:calc(50% - 80px);
+            }
+        }
+    }
+    @media (min-width:1300px)
     {
         width:25%;
-        height:300px;
         margin:0 20px;
+        &.line::before{
+            left:-40px;
+            transform:translateY(-50%);
+            width:40px;
+        }
     }
 `
 const BottomContainer = styled.div`
@@ -72,7 +126,7 @@ const BottomContainer = styled.div`
     background-size:cover;
     background-position:left center;
     padding: 3rem 0;
-    @media(min-width:1450px)
+    @media(min-width:1000px)
     {
         background:url(${bgBoostDesktop}) no-repeat;
         background-color:${props=>props.theme.darkViolet};
@@ -94,37 +148,37 @@ const SmallImageContainer = styled.div`
     height:80px;
     background-color:${props=>props.theme.darkViolet};
     border-radius:100%;
-    &.line::before{
-        content:'';
-        position:absolute;
-        top:-60px;
-        transform:translateX(-50%);
-        width:10px;
-        height:60px;
-        background-color:${props=>props.theme.cyan};
+    @media(min-width:1000px)
+    {
+        margin-left:2rem;
     }
 `
 const HeaderContainer = styled.div`
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         float:left;
         text-align:left;
+        padding-left:10%;
+        width:50%;
     }
 `
 const StatisticHeader = styled.div`
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
-        width:100%;
-        padding:0
+        width:30%;
+        margin:0 auto;
     }
 `
 const Statistics = styled.div`
     margin:auto;
-    @media(min-width:1450px)
+    @media(min-width:1000px)
     {
-        display:flex;
-        flex-wrap:wrap;
+        padding:70px 0;
     }
+`
+const HeaderText = styled(Text)`
+    padding-left:0;
+    padding-right:10%;
 `
 export default function Home()
 {
@@ -133,8 +187,8 @@ export default function Home()
             <InWorkPicture src={working} alt="employee at work"/>
             <HeaderContainer>
                 <BigHeader>More than just shorter links</BigHeader>
-                <Text>Build your brand’s recognition and get detailed insights 
-                on how your links are performing.</Text>
+                <HeaderText>Build your brand’s recognition and get detailed insights 
+                on how your links are performing.</HeaderText>
                 <Button>Get Started</Button>
             </HeaderContainer>
             <ShortenerForm/>
@@ -152,15 +206,15 @@ export default function Home()
                         <Header>Brand Recognition</Header>
                         <Text>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</Text>
                     </Statistic>
-                    <Statistic>
-                        <SmallImageContainer className="line">
+                    <Statistic className="line">
+                        <SmallImageContainer>
                             <SmallImage src={iconDetailed}/>
                         </SmallImageContainer>
                         <Header>Detailed Records</Header>
                         <Text>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</Text>
                     </Statistic>
-                    <Statistic>
-                        <SmallImageContainer className="line">
+                    <Statistic className="line">
+                        <SmallImageContainer>
                             <SmallImage src={iconFully}/>
                         </SmallImageContainer>
                         <Header>Fully Customizable</Header>

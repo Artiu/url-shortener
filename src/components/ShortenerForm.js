@@ -12,7 +12,7 @@ const Form = styled.form`
     border-radius:10px;
     position:relative;
     top:calc(2.5rem + 20px);
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         width:80%;
         display:grid;
@@ -30,7 +30,7 @@ const Input = styled.input.attrs({type:"text", placeholder:"Shorten a link here.
     padding:10px 5px;
     border-radius:5px;
     border:0;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         padding:0 5px;
     }
@@ -45,7 +45,7 @@ const Submit = styled.input.attrs({type:"submit", value:"Shorten It!"})`
     color:white;
     border-radius:5px;
     font-weight:bold;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         margin-top:0;
     }

@@ -9,10 +9,10 @@ const StyledFooter = styled.footer`
     color:white;
     background-color:${props=>props.theme.veryDarkViolet};
     text-align:center;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         display:grid;
-        grid-template-columns:40% 10% 10% 10% 25%;
+        grid-template-columns:30% 1fr 1fr 1fr 25%;
         text-align:left;
         padding:30px;
     }
@@ -20,7 +20,7 @@ const StyledFooter = styled.footer`
 const Header = styled.p`
     font-weight:bold;
     padding:1rem 0;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         padding:0;
     }
@@ -28,7 +28,7 @@ const Header = styled.p`
 const Text = styled.p`
     color:${props=>props.theme.gray};
     padding:0.2rem 0;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         padding:0;
     }
@@ -38,7 +38,7 @@ const SocialIcon = styled.img`
 `
 const Image = styled.img`
     padding:2rem 0;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         padding:0;
         margin-left:20%;
@@ -47,7 +47,7 @@ const Image = styled.img`
 `
 const SocialIconsContainer = styled.div`
     padding:2rem 0;
-    @media (min-width:1450px)
+    @media (min-width:1000px)
     {
         padding:0;
     }
