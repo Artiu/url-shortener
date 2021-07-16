@@ -56,6 +56,11 @@ export const Button = styled.button`
         padding:10px 30px;
         font-size:16px;
     }
+    :hover
+    {
+        cursor:pointer;
+        background-color:#9be3e2;
+    }
 `
 const WhiteText = styled(Header)`
     color:white;

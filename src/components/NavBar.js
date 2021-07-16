@@ -20,6 +20,7 @@ const Hamburger = styled.button`
     border:0;
     border-top:4px ${props=>props.theme.darkBlue} solid;
     position:relative; 
+    outline:none;
     ::before,::after{
         content:'';
         position: absolute;
@@ -59,6 +60,7 @@ const MobileNav = styled.div`
     width:90%;
     text-align:center;
     border-radius:10px;
+    z-index:2;
 `
 const Link = styled.p`
     color:white;
@@ -71,6 +73,11 @@ const Link = styled.p`
         color:${props=>props.theme.gray};
         margin:0;
         padding:2px 15px;
+    }
+    :hover
+    {
+        cursor:pointer;
+        color:${props=>props.theme.darkBlue};
     }
 `
 const StyledHr = styled.hr`

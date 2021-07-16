@@ -49,6 +49,11 @@ const Submit = styled.input.attrs({type:"submit", value:"Shorten It!"})`
     {
         margin-top:0;
     }
+    :hover
+    {
+        cursor:pointer;
+        background-color:#9be3e2;
+    }
 `
 
 export default function ShortenerForm()
