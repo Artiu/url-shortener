@@ -25,8 +25,10 @@ const Text = styled.p`
     color:${props=>props.theme.gray};
     padding:0.2rem 0;
     width:fit-content;
+    margin:0 auto;
     @media (min-width:1000px)
     {
+        margin:0;
         padding:0;
     }
     :hover

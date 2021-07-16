@@ -7,6 +7,7 @@ import iconBrand from '../images/icon-brand-recognition.svg';
 import iconDetailed from '../images/icon-detailed-records.svg';
 import iconFully from '../images/icon-fully-customizable.svg';
 import bgBoostDesktop from '../images/bg-boost-desktop.svg';
+import { useEffect, useState } from "react";
 
 const Main = styled.main`
     text-align:center;
@@ -187,6 +188,16 @@ const HeaderText = styled(Text)`
 `
 export default function Home()
 {
+    const [shortenedLinks, setShortenedLinks] = useState([]);
+    useEffect(()=>{
+        const previousLinks = localStorage.getItem("shortenedLinks");
+        if(previousLinks) setShortenedLinks(JSON.parse(previousLinks));
+    },[]);
+    const addShortenedLink = (link) =>{
+        const result = [...shortenedLinks,{shortened:link.shortened,previous:link.previous}]
+        localStorage.setItem("shortenedLinks",JSON.stringify(result));
+        setShortenedLinks(result);
+    }
     return(
         <Main>
             <InWorkPicture src={working} alt="employee at work"/>
@@ -196,8 +207,8 @@ export default function Home()
                 on how your links are performing.</HeaderText>
                 <Button>Get Started</Button>
             </HeaderContainer>
-            <ShortenerForm/>
-            <LinksList/>
+            <ShortenerForm addShortenedLink={addShortenedLink}/>
+            <LinksList shortenedLinks = {shortenedLinks}/>
             <AdvancedStatistics>
                 <StatisticHeader>
                     <Header>Advanced Statistics</Header>
