@@ -1,6 +1,6 @@
 {
-  "name": "url-shortener",
   "homepage": "https://artiu.github.io/url-shortener",
+  "name": "url-shortener",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

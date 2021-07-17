@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Artiu/url-shortener)
-- Live Site URL: [Add live site URL here](https://artiu.github.io/url-shortener)
+- Solution URL: [https://github.com/Artiu/url-shortener](https://github.com/Artiu/url-shortener)
+- Live Site URL: [https://artiu.github.io/url-shortener](https://artiu.github.io/url-shortener)
 
 ## My process
 
