@@ -52,6 +52,7 @@ export const Button = styled.button`
     color:white;
     font-weight:bold;
     margin-top:10px;
+    outline:none;
     @media (min-width:1000px)
     {
         padding:10px 30px;
@@ -194,7 +195,7 @@ export default function Home()
         if(previousLinks) setShortenedLinks(JSON.parse(previousLinks));
     },[]);
     const addShortenedLink = (link) =>{
-        const result = [...shortenedLinks,{shortened:link.shortened,previous:link.previous}]
+        const result = [{shortened:link.shortened,previous:link.previous}, ...shortenedLinks];
         localStorage.setItem("shortenedLinks",JSON.stringify(result));
         setShortenedLinks(result);
     }
